@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Qrcode Generator</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <span>Insira o link e receba o QRCode</span>
+      <input type="text" id="qr-data" />
+      <button type="button" onclick="generateQR()">Confirmar</button>
+      <div id="qrcode"></div>
+    </div>
+  </body>
+  <script
+    src="https://kit.fontawesome.com/75a1e51ac0.js"
+    crossorigin="anonymous"
+  ></script>
+  <script src="qrcode.min.js"></script>
+  <script>
+    var qrdata = document.getElementById('qr-data')
+    var qrcode = new QRCode(document.getElementById('qrcode'))
+
+    function generateQR() {
+      var data = qrdata.value
+      qrcode.makeCode(data)
+    }
+  </script>
+</html>
+
+<!--Coded by João Vinícius-->
